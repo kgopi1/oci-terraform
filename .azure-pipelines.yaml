@@ -1,0 +1,57 @@
+name: terraform-oci-iam
+
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  # Replace with the name of your Azure DevOps variable group.
+  - group: terraform-oci-dev
+
+  # Add a variable in that variable group containing the secure file name.
+  # Example variable name: secureFileName
+  - name: terraform-oci-dev.pem
+    value: $(secureFileName)
+
+  # Add these variables to the same variable group in Azure DevOps.
+  - name: TF_VAR_tenancy_ocid
+    value: $(OCI_TENANCY_OCID)
+  - name: TF_VAR_user_ocid
+    value: $(OCI_USER_OCID)
+  - name: TF_VAR_fingerprint
+    value: $(OCI_FINGERPRINT)
+  - name: TF_VAR_region
+    value: $(OCI_REGION)
+
+
+steps:
+  - checkout: self
+
+  - task: DownloadSecureFile@1
+    displayName: Download secure file from variable group
+    inputs:
+      secureFile: '$(SECURE_FILE_NAME)'
+
+  - script: |
+      echo "Secure file downloaded to $(Agent.TempDirectory)/$(SECURE_FILE_NAME)"
+      ls -l "$(Agent.TempDirectory)/$(SECURE_FILE_NAME)"
+      chmod 400 "$(Agent.TempDirectory)/$(SECURE_FILE_NAME)"
+    displayName: Verify secure file download
+
+  - task: TerraformInstaller@1
+    displayName: Install Terraform
+    inputs:
+      terraformVersion: 'latest'
+
+  - script: |
+      terraform init -input=false
+      terraform plan -input=false -out=tfplan
+    displayName: Terraform init and plan
+    workingDirectory: $(Build.SourcesDirectory)
+    env:
+      TF_VAR_tenancy_ocid: $(TF_VAR_tenancy_ocid)
+      TF_VAR_user_ocid: $(TF_VAR_user_ocid)
+      TF_VAR_fingerprint: $(TF_VAR_fingerprint)
+      TF_VAR_region: $(TF_VAR_region)
+      TF_VAR_private_key_path: $(Agent.TempDirectory)/$(SECURE_FILE_NAME)
