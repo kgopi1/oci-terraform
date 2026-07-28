@@ -11,8 +11,8 @@ variables:
 
   # Add a variable in that variable group containing the secure file name.
   # Example variable name: secureFileName
-  - name: terraform-oci-dev.pem
-    value: $(secureFileName)
+  - name: SECURE_FILE_NAME
+    value: terraform-oci-dev.pem
 
   # Add these variables to the same variable group in Azure DevOps.
   - name: TF_VAR_tenancy_ocid
