@@ -31,7 +31,7 @@ steps:
   - task: DownloadSecureFile@1
     displayName: Download secure file from variable group
     inputs:
-      secureFile: '$(SECURE_FILE_NAME)'
+      secureFile: $(SECURE_FILE_NAME)
 
   - script: |
       echo "Secure file downloaded to $(Agent.TempDirectory)/$(SECURE_FILE_NAME)"

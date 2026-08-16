@@ -1,0 +1,11 @@
+curl -LSs https://raw.githubusercontent.com/fnproject/cli/master/install | sh
+
+## https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartlocalhost.htm
+
+1. Set the context
+fn create context <my-context> --provider oracle
+
+2. Use the context 
+
+fn use context hello-world
+
