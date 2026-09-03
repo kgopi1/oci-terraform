@@ -1,0 +1,15 @@
+fn create context func --provider oracle
+fn use context func
+fn update context oracle.compartment-id ocid1.compartment.oc1..aaaaaaaat5vdeo3r4mcvavr4e27mt6tb25l3kjipgzxg4xwszymr6dscyokq
+fn update context api-url https://functions.eu-stockholm-1.oraclecloud.com
+fn update context registry eu-stockholm-1/axnaxy33zwoc/kg-func
+
+fn update context oracle.image-compartment-id ocid1.compartment.oc1..aaaaaaaat5vdeo3r4mcvavr4e27mt6tb25l3kjipgzxg4xwszymr6dscyokq
+
+)+UUVh-Ffe7nu>CAi2E8
+
+docker login eu-stockholm-1.ocir.io -u 'axnaxy33zwoc/cloudlabs01@gmail.com' 
+
+fn deploy --app siem-app
+
+denied: Anonymous users are only allowed read access on public repos

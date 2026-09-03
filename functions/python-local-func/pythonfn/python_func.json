@@ -1,0 +1,32 @@
+{
+	"annotations": {
+		"fnproject.io/fn/invokeEndpoint": "https://5xopbvjiuha.functions.eu-stockholm-1.oci.oraclecloud.com/20181201/functions/ocid1.fnfunc.oc1.eu-stockholm-1.amaaaaaax6kdgtyaflsr24wzbu77t5hw2w5qtdia7nbhtcsw7xce6n6b6clq/actions/invoke",
+		"oracle.com/oci/compartmentId": "ocid1.compartment.oc1..aaaaaaaat5vdeo3r4mcvavr4e27mt6tb25l3kjipgzxg4xwszymr6dscyokq",
+		"oracle.com/oci/definedTags": {
+			"Oracle-Tags": {
+				"CreatedBy": "default/terraform-oci-dev",
+				"CreatedOn": "2026-08-23T16:14:18.923Z"
+			}
+		},
+		"oracle.com/oci/imageDigest": "sha256:73c06094afcf2028650564fde654a01f4ba9e0260d4d9033bf2a5cbbb8aa1bd4",
+		"oracle.com/oci/parity/traceConfig": {
+			"isEnabled": false
+		},
+		"oracle.com/oci/provisionedConcurrencyStrategy": "NONE"
+	},
+	"app_id": "ocid1.fnapp.oc1.eu-stockholm-1.amaaaaaax6kdgtyawn735ujtxjlprcky6ib5aapqgfrdnlpmi5xopbvjiuha",
+	"created_at": "2026-08-23T16:14:19.155Z",
+	"id": "ocid1.fnfunc.oc1.eu-stockholm-1.amaaaaaax6kdgtyaflsr24wzbu77t5hw2w5qtdia7nbhtcsw7xce6n6b6clq",
+	"image": "eu-stockholm-1.ocir.io/axnaxy33zwoc/pythonfn/pythonfn:0.0.3",
+	"memory": 256,
+	"name": "pythonfn",
+	"provisionedConcurrency": {
+		"strategy": "NONE"
+	},
+	"shape": "GENERIC_X86",
+	"timeout": 30,
+	"traceConfig": {
+		"isEnabled": false
+	},
+	"updated_at": "2026-08-23T16:14:19.155Z"
+}

@@ -1,0 +1,47 @@
+Pre-Request 
+
+1. Func app created 
+2. cd func_app 
+
+## Steps
+# Set context to oracel 
+1. fn create context pythonfn --provider oracle
+
+2. fn use context pythonfn
+
+3. Set the context id. 
+
+4. Set the compartment id # compartment id of the application . 
+
+fn update context oracle.compartment-id ocid1.compartment.oc1..aaaaaaaat5vdeo3r4mcvavr4e27mt6tb25l3kjipgzxg4xwszymr6dscyokq
+
+5. Set the api-url 
+
+fn update context api-url https://functions.eu-stockholm-1.oraclecloud.com
+
+6. Set the registry
+
+fn update context registry region/namespace/[repo-name-prefix]
+
+fn update context registry eu-stockholm-1.ocir.io/axnaxy33zwoc/pythonfn
+
+eu-stockholm-1/axnaxy33zwoc/pythonfn 
+
+7. Set the image compartment id. 
+
+fn update context oracle.image-compartment-id ocid1.compartment.oc1..aaaaaaaat5vdeo3r4mcvavr4e27mt6tb25l3kjipgzxg4xwszymr6dscyokq
+
+8. docker login . 
+
+docker login eu-stockholm-1.ocir.io -u 'axnaxy33zwoc/cloudlabs01@gmail.com' 
+
+)+UUVh-Ffe7nu>CAi2E8
+
+9. Deploy the function 
+fn -v deploy --app pythonfn 
+
+
+oci fn function invoke --function-id <function-ocid> --file "<output-filepath>" --body "<request-parameters>"
+
+
+oci fn function invoke --function-id ocid1.fnapp.oc1.eu-stockholm-1.amaaaaaax6kdgtyawn735ujtxjlprcky6ib5aapqgfrdnlpmi5xopbvjiuha --file output.txt --body ""
