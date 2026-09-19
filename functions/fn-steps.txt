@@ -2,5 +2,7 @@ fn start
 fn create app oci-fn-app 
 fn list apps
 fn --verbose deploy --app oci-fn-app --local
+fn list functions oci-fn-app
 fn invoke oci-fn-app 
 fn invoke oci-fn-app oci-fn-demo
+fn inspect function oci-fn-app oci-fn-demo
