@@ -14,7 +14,7 @@ openssl genrsa -out private_key.pem 2048
 openssl rsa -pubin -in public_key.pem -outform DER | openssl dgst -md5 -c
 ```
 
-4. To generate pblic key from private key PEM file. 
+4. To generate public key from private key PEM file. 
 ```
 openssl rsa -in private_key.pem -pubout -out public_key.pem
 
